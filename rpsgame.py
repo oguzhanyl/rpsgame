@@ -1,0 +1,57 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+
+while True:
+    computer = random.randint(0,2)
+    you = input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for scissors. If you want to exit the game, please press the 'q' key.\n ")
+    if not you.isdigit() or (int(you) < 0 or int(you) >=3):
+        if you == "q":
+            break
+        print("You entered an incorrect value. Please choose between 0,1 or 2.")
+    elif int(you) == 1:
+        if computer == 0:
+            print(f"Your chose:\n{paper}\nComputer chose:\n{rock}\nYou win!")
+        elif computer == 1:
+            print(f"Your chose:\n{paper}\nComputer chose:\n{paper}\nDraw.")
+        elif computer == 2:
+            print(f"Your chose:\n{paper}\nComputer chose:\n{scissors}\nYou lose.")
+    elif int(you) == 0:
+        if computer == 0:
+            print(f"Your chose:\n{rock}\nComputer chose:\n{rock}\nDraw.")
+        elif computer == 1:
+            print(f"Your chose:\n{rock}\nComputer chose:\n{paper}\nYou lose.")
+        elif computer == 2:
+            print(f"Your chose:\n{rock}\nComputer chose:\n{scissors}\nYou win!")
+    elif int(you) == 2:
+        if computer == 0:
+            print(f"Your chose:\n{scissors}\nComputer chose:\n{rock}\nYou lose.")
+        elif computer == 1:
+            print(f"Your chose:\n{scissors}\nComputer chose:\n{paper}\nYou win!")
+        elif computer == 2:
+            print(f"Your chose:\n{scissors}\nComputer chose:\n{scissors}\nDraw.")
